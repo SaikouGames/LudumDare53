@@ -8,12 +8,25 @@ public class motorbike_movement : MonoBehaviour
     public Rigidbody2D rb;
     public float rotSpeed;
     public Rigidbody2D pushUpRb;
-    
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        
+        GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
+    }
+
+    private void GameManager_OnGameStateChanged(GameManager.GameState gameState)
+    {
+        if (gameState == GameManager.GameState.Pause)
+        {
+            rb.Sleep();
+            enabled = false;
+        }
+        else
+        {
+            rb.WakeUp();
+            enabled = true;
+        }
     }
 
     // Update is called once per frame
