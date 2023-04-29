@@ -7,7 +7,6 @@ public class motorbike_movement : MonoBehaviour
     public float rotSpeed;
     public Rigidbody2D pushUpRbRight;
     public Rigidbody2D pushUpRbLeft;
-    public float pushupForce = 6f;
 
     private void Awake()
     {
@@ -36,14 +35,14 @@ public class motorbike_movement : MonoBehaviour
     void Update()
     {
         //Movement to the right
-        if(Input.GetKey("right") || Input.GetKey("a")) {
-            rb.AddForce(new Vector3(10f,0f,0f));
+        if(Input.GetKey("right") || Input.GetKey("d")) {
+            rb.AddForce(new Vector3(5000f*Time.deltaTime,0f,0f));
             
         }
         
         //Movement to the left
-        if(Input.GetKey("left") || Input.GetKey("d")) {
-            rb.AddForce(new Vector3(-10f,0f,0f));
+        if(Input.GetKey("left") || Input.GetKey("a")) {
+            rb.AddForce(new Vector3(-5000f*Time.deltaTime,0f,0f));
         }
 
         // Rotate to the right
@@ -54,25 +53,29 @@ public class motorbike_movement : MonoBehaviour
             }
 
             // Add rotation velocity
-            pushUpRbLeft.velocity += new Vector2(0f,0.07f);
+            pushUpRbLeft.velocity += new Vector2(0f,35f*Time.deltaTime);
         }else{
             // if we are not rotating the velocity should be equal to gravity
             pushUpRbLeft.velocity = new Vector2(0f,-9.8f);
         }
 
         //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
-        if((Input.GetKey("up") || Input.GetKey("a")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
+        if((Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
             //Reset velocity to 0
             if(pushUpRbRight.velocity.y < 0f) {
                 pushUpRbRight.velocity = new Vector2(0f,0f);
             }
             
             // Add rotation velocity
-            pushUpRbRight.velocity += new Vector2(0f,0.07f);
+            pushUpRbRight.velocity += new Vector2(0f,35f*Time.deltaTime);
             
         }else{
             // if we are not rotating the velocity should be equal to gravity
             pushUpRbRight.velocity = new Vector2(0f,-9.8f);
+        }
+
+        if(Input.GetKey("space")) {
+            rb.AddForce(new Vector2(0f,10000f*Time.deltaTime));
         }
 
 
