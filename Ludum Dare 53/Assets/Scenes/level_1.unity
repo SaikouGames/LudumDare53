@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 1448229611}
   - component: {fileID: 1448229613}
   m_Layer: 0
-  m_Name: 
+  m_Name: pusher_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1278,7 +1278,7 @@ GameObject:
   - component: {fileID: 1843438981}
   - component: {fileID: 1843438979}
   m_Layer: 0
-  m_Name: 
+  m_Name: pusher_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
