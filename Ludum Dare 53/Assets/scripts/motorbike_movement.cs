@@ -7,7 +7,9 @@ public class motorbike_movement : MonoBehaviour
 
     public Rigidbody2D rb;
     public float rotSpeed;
-    public Rigidbody2D pushUpRb;
+    public Rigidbody2D pushUpRbRight;
+    public Rigidbody2D pushUpRbLeft;
+    public float pushupForce = 6f;
     
 
     // Start is called before the first frame update
@@ -19,42 +21,56 @@ public class motorbike_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Movement to the right
         if(Input.GetKey("right") || Input.GetKey("a")) {
             rb.AddForce(new Vector3(10f,0f,0f));
             
         }
-
+        
+        //Movement to the left
         if(Input.GetKey("left") || Input.GetKey("d")) {
             rb.AddForce(new Vector3(-10f,0f,0f));
-            // rb.velocity = new Vector2(-5f,0f);
         }
 
-        // if(Input.GetKey("down")) {
-        //     transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 100), rotSpeed);
+        // Rotate to the right
+        if(Input.GetKey("down") || Input.GetKey("s")) {
+            //Reset velocity to 0
+            if(pushUpRbLeft.velocity.y < 0f) {
+                pushUpRbLeft.velocity = new Vector2(0f,0f);
+            }
 
-        //     // rb.AddForce(new Vector3(0f,0.1f,0f));
-        //     // rb.AddRelativeTorque(transform.forward * 1.0f, ForceMode.Impulse);
-        //     // Quaternion deltaRotation = Quaternion.Euler(transform.forward * 1.0f * Time.fixedDeltaTime);
-        //     // rb.MoveRotation(rb.rotation * deltaRotation);
-        //     // rb.rotation += 1.0f;
-        //     // rb.angularVelocity = transform.forward * 1.0f;    // spin around +Z at 1rad/sec
-        //     // transform.Translate(transform.forward * 1.0f * Time.deltaTime, Space.World);
-        //     // rb.angularDrag = 0.0f;
-        // }
+            // Add rotation velocity
+            pushUpRbLeft.velocity += new Vector2(0f,0.07f);
+        }else{
+            // if we are not rotating the velocity should be equal to gravity
+            pushUpRbLeft.velocity = new Vector2(0f,-9.8f);
+        }
 
-        // if(Input.GetKey("up")) {
-        //     // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -100), rotSpeed);
-
-        //     // rb.angularVelocity = transform.forward * -1.0f;
-        //     // rb.AddRelativeTorque(transform.forward * -1.0f, ForceMode.Impulse);
-        //     // Quaternion deltaRotation = Quaternion.Euler(transform.forward * -1.0f * Time.fixedDeltaTime);
-        //     // rb.MoveRotation(rb.rotation * deltaRotation);
-        //     // rb.rotation += -1.0f;
-        //     // transform.Translate(transform.forward * -1.0f * Time.deltaTime, Space.World);
-
-        //     pushUpRb.AddForce(new Vector3(0f,0.4f,0f));
+        //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
+        if((Input.GetKey("up") || Input.GetKey("a")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
+            //Reset velocity to 0
+            if(pushUpRbRight.velocity.y < 0f) {
+                pushUpRbRight.velocity = new Vector2(0f,0f);
+            }
             
-        // }
+            // Add rotation velocity
+            pushUpRbRight.velocity += new Vector2(0f,0.07f);
+            
+        }else{
+            // if we are not rotating the velocity should be equal to gravity
+            pushUpRbRight.velocity = new Vector2(0f,-9.8f);
+        }
+
+
+        // this next part clamps the rotation and movement velocity to their respective max value
+
+        if(pushUpRbLeft.velocity.y > 3f) {
+            pushUpRbLeft.velocity = new Vector2(0f,3f);
+        }
+
+        if(pushUpRbRight.velocity.y > 3f) {
+            pushUpRbRight.velocity = new Vector2(0f,3f);
+        }
 
         if(rb.velocity.x < -5f) {
             rb.velocity = new Vector2(-5f,0f);
