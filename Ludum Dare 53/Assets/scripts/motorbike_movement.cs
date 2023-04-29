@@ -10,12 +10,28 @@ public class motorbike_movement : MonoBehaviour
     public Rigidbody2D pushUpRbRight;
     public Rigidbody2D pushUpRbLeft;
     public float pushupForce = 6f;
-    
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
+    }
+
+    private void GameManager_OnGameStateChanged(GameManager.GameState gameState)
+    {
+        if (gameState == GameManager.GameState.Pause)
+        {
+            rb.Sleep();
+            pushUpRbRight.Sleep();
+            pushUpRbLeft.Sleep();
+            enabled = false;
+        }
+        else
+        {
+            rb.WakeUp();
+            pushUpRbRight.WakeUp();
+            pushUpRbLeft.WakeUp();
+            enabled = true;
+        }
     }
 
     // Update is called once per frame

@@ -256,6 +256,129 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &298494975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+  m_PrefabInstance: {fileID: 2179652577399446050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &298494980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298494975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c09b5364fded3a4fa55f6c9d7e60e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &434383586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+  m_PrefabInstance: {fileID: 683824535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &434383591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434383586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c09b5364fded3a4fa55f6c9d7e60e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &487497030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487497031}
+  - component: {fileID: 487497033}
+  - component: {fileID: 487497032}
+  m_Layer: 0
+  m_Name: BoxesArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487497031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487497030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1216894984}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487497032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487497030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb45b25f2cd55944aead9261e78467e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfBoxes: 6
+--- !u!61 &487497033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487497030}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 7.19}
+  m_EdgeRadius: 0
+--- !u!1 &654012982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+  m_PrefabInstance: {fileID: 1841155176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &654012987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654012982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c09b5364fded3a4fa55f6c9d7e60e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &683824535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Name
       value: pizzabox (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+      propertyPath: m_TagString
+      value: Box
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
@@ -368,8 +495,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: pizzabox (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+--- !u!1 &764360404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 764360406}
+  - component: {fileID: 764360405}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &764360405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764360404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84530983b9d800d4b9590e38de0a892e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 0
+--- !u!4 &764360406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764360404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &913711217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,6 +601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pizzabox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
 --- !u!1 &1216894983
@@ -461,6 +641,7 @@ Transform:
   m_Children:
   - {fileID: 1843438978}
   - {fileID: 1448229610}
+  - {fileID: 487497031}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,11 +903,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1448229610}
-  - component: {fileID: 1448229613}
   - component: {fileID: 1448229612}
   - component: {fileID: 1448229611}
+  - component: {fileID: 1448229613}
   m_Layer: 0
-  m_Name: TiltPushLeft
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,8 +1181,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: pizzabox (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+--- !u!1 &1826426512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+  m_PrefabInstance: {fileID: 913711217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1826426517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826426512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c09b5364fded3a4fa55f6c9d7e60e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1841155176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,6 +1259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pizzabox (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
 --- !u!1 &1843438977
@@ -1068,11 +1274,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843438978}
-  - component: {fileID: 1843438979}
   - component: {fileID: 1843438980}
   - component: {fileID: 1843438981}
+  - component: {fileID: 1843438979}
   m_Layer: 0
-  m_Name: TiltPushRight
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1246,6 +1452,10 @@ PrefabInstance:
     - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Name
       value: pizzabox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179652578594679110, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+      propertyPath: m_TagString
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Material
