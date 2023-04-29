@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Box : MonoBehaviour
@@ -11,6 +9,12 @@ public class Box : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        // To avoid memory leaks in case the object is destroyed
+        GameManager.OnGameStateChanged -= GameManager_OnGameStateChanged;
     }
 
     private void GameManager_OnGameStateChanged(GameManager.GameState gameState)

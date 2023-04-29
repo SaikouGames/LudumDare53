@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
@@ -7,7 +5,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     
     private bool _isPausing;
-
 
     public void Pause()
     {
@@ -17,7 +14,7 @@ public class MenuManager : MonoBehaviour
 
         print("Game paused");
 
-        //_pauseMenu.SetActive(true);
+        _pauseMenu.SetActive(true);
     }
 
     public void Resume()
@@ -28,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
         print("Game resumed");
 
-        //_pauseMenu.SetActive(false);
+        _pauseMenu.SetActive(false);
     }
 
     private void Update()
