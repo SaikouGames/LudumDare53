@@ -39,6 +39,7 @@ public class motorbike_movement : MonoBehaviour
         }
 
         //joint = GetComponent<WheelJoint2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -60,7 +61,7 @@ public class motorbike_movement : MonoBehaviour
             }
 
             // Rotate to the right
-            if (Input.GetKey("q"))
+            if (Input.GetKey("k"))
             {//Input.GetKey("down") || Input.GetKey("s")) {
                 var impulse = (-24 * Mathf.Deg2Rad) * rotationStrength * Time.deltaTime;
                 rb.AddTorque(impulse);
@@ -71,7 +72,7 @@ public class motorbike_movement : MonoBehaviour
             }
 
             //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
-            if (Input.GetKey("e"))
+            if (Input.GetKey("l"))
             {//(Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
                 var impulse = (24 * Mathf.Deg2Rad) * rotationStrength * Time.deltaTime;
                 rb.AddTorque(impulse);//7000f*Time.deltaTime);
@@ -130,8 +131,28 @@ public class motorbike_movement : MonoBehaviour
             {
                 motor.motorSpeed = 1000;
             }
-            motor.maxMotorTorque = 30;
+            motor.maxMotorTorque = 20;
             joint.motor = motor;
+
+            // Rotate to the right
+            if (Input.GetKey("l"))
+            {//Input.GetKey("down") || Input.GetKey("s")) {
+                var impulse = (-24 * Mathf.Deg2Rad) * rotationStrength * Time.deltaTime;
+                rb.AddTorque(impulse);
+                // rb.rotation -= rb.rotation*rotSlowDownFactor*Time.deltaTime + (addRotFactor+Time.deltaTime);
+            }
+            else
+            {
+            }
+
+            //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
+            if (Input.GetKey("k"))
+            {//(Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
+                var impulse = (24 * Mathf.Deg2Rad) * rotationStrength * Time.deltaTime;
+                rb.AddTorque(impulse);//7000f*Time.deltaTime);
+                                      // rb.rotation += rb.rotation*rotSlowDownFactor*Time.deltaTime + (addRotFactor+Time.deltaTime);
+
+            }
         }
         
     }

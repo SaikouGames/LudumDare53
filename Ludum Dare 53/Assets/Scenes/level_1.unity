@@ -1076,23 +1076,6 @@ PolygonCollider2D:
       - {x: -17.98982, y: -11.599304}
       - {x: -18.035713, y: -11.759927}
       - {x: -18.035713, y: -11.828766}
-      - {x: -20.628633, y: -11.828766}
-      - {x: -20.674526, y: -11.874659}
-      - {x: -20.926933, y: -11.851712}
-      - {x: -21.041664, y: -11.851712}
-      - {x: -21.179342, y: -11.736981}
-      - {x: -21.408804, y: -11.828766}
-      - {x: -21.408804, y: -12.058228}
-      - {x: -21.385859, y: -12.172958}
-      - {x: -21.43175, y: -12.241797}
-      - {x: -21.43175, y: -12.402421}
-      - {x: -21.294073, y: -12.58599}
-      - {x: -21.064611, y: -12.608936}
-      - {x: -20.789257, y: -12.494205}
-      - {x: -20.674526, y: -12.333582}
-      - {x: -20.674526, y: -12.540098}
-      - {x: -20.628633, y: -12.58599}
-      - {x: -17.02608, y: -12.58599}
       - {x: -17.02608, y: -12.677775}
       - {x: -16.934296, y: -12.76956}
       - {x: -8.903126, y: -12.76956}
@@ -1976,8 +1959,8 @@ WheelJoint2D:
   m_Anchor: {x: -13.088235, y: -12.911764}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 2
+    m_DampingRatio: 1
+    m_Frequency: 7
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -2000,8 +1983,8 @@ WheelJoint2D:
   m_Anchor: {x: 8.823531, y: -12.5588255}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 2
+    m_DampingRatio: 1
+    m_Frequency: 7
     m_Angle: 107.65
   m_UseMotor: 0
   m_Motor:
@@ -2040,11 +2023,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b35ae8484d52fd7b5d9a05d4c6417a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 323142891}
   rotSpeed: 0
   wheelGroundContact: {fileID: 0}
   maxAngularVelocity: 40
-  rotationStrength: 200000
+  rotationStrength: 10000
   tech: 0
   joint: {fileID: 323142889}
 --- !u!1001 &343359827
