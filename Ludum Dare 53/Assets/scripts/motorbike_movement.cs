@@ -7,6 +7,9 @@ public class motorbike_movement : MonoBehaviour
     public float rotSpeed;
     public Rigidbody2D pushUpRbRight;
     public Rigidbody2D pushUpRbLeft;
+    public Transform pushUpRbRightTransform;
+    public Transform pushUpRbLeftTransform;
+    public detect_wheel_ground_contact wheelGroundContact;
 
     private void Awake()
     {
@@ -47,46 +50,33 @@ public class motorbike_movement : MonoBehaviour
 
         // Rotate to the right
         if(Input.GetKey("down") || Input.GetKey("s")) {
-            //Reset velocity to 0
-            if(pushUpRbLeft.velocity.y < 0f) {
-                pushUpRbLeft.velocity = new Vector2(0f,0f);
-            }
-
-            // Add rotation velocity
-            pushUpRbLeft.velocity += new Vector2(0f,35f*Time.deltaTime);
+            var impulse = (-17 * Mathf.Deg2Rad) * 7000f*Time.deltaTime;
+            rb.AddTorque(impulse);
         }else{
-            // if we are not rotating the velocity should be equal to gravity
-            pushUpRbLeft.velocity = new Vector2(0f,-9.8f);
         }
 
         //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
         if((Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
-            //Reset velocity to 0
-            if(pushUpRbRight.velocity.y < 0f) {
-                pushUpRbRight.velocity = new Vector2(0f,0f);
-            }
-            
-            // Add rotation velocity
-            pushUpRbRight.velocity += new Vector2(0f,35f*Time.deltaTime);
+            var impulse = (24 * Mathf.Deg2Rad) * 7000f*Time.deltaTime;
+            rb.AddTorque(impulse);//7000f*Time.deltaTime);
             
         }else{
-            // if we are not rotating the velocity should be equal to gravity
-            pushUpRbRight.velocity = new Vector2(0f,-9.8f);
+
         }
 
-        if(Input.GetKey("space")) {
-            rb.AddForce(new Vector2(0f,10000f*Time.deltaTime));
+        if(Input.GetKeyDown("space") && wheelGroundContact.isWheelGrounded) {
+            rb.AddForce(new Vector2(0f,100000f*Time.deltaTime));
         }
 
 
         // this next part clamps the rotation and movement velocity to their respective max value
 
-        if(pushUpRbLeft.velocity.y > 3f) {
-            pushUpRbLeft.velocity = new Vector2(0f,3f);
+        if((pushUpRbLeft.velocity.y + pushUpRbLeft.velocity.x) > 2f) {
+            pushUpRbLeft.velocity = new Vector2(pushUpRbRightTransform.up.x,pushUpRbRightTransform.up.y) * 2f;//new Vector2(0f,3f);
         }
 
-        if(pushUpRbRight.velocity.y > 3f) {
-            pushUpRbRight.velocity = new Vector2(0f,3f);
+        if((pushUpRbRight.velocity.y + pushUpRbRight.velocity.x) > 2f) {
+            pushUpRbRight.velocity = new Vector2(pushUpRbRightTransform.up.x,pushUpRbRightTransform.up.y) * 2f;//new Vector2(0f,3f);
         }
 
         if(rb.velocity.x < -5f) {
