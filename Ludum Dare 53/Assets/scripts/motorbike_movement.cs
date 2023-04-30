@@ -125,13 +125,13 @@ public class motorbike_movement : MonoBehaviour
             motor.motorSpeed = 0;
             if (Input.GetKey("right") || Input.GetKey("d"))
             {
-                motor.motorSpeed = -1000;
+                motor.motorSpeed = -700;
             }
             if (Input.GetKey("left") || Input.GetKey("a"))
             {
-                motor.motorSpeed = 1000;
+                motor.motorSpeed = 700;
             }
-            motor.maxMotorTorque = 20;
+            motor.maxMotorTorque = 25;
             joint.motor = motor;
 
             // Rotate to the right
