@@ -5,11 +5,13 @@ public class motorbike_movement : MonoBehaviour
 
     public Rigidbody2D rb;
     public float rotSpeed;
-    public Rigidbody2D pushUpRbRight;
-    public Rigidbody2D pushUpRbLeft;
-    public Transform pushUpRbRightTransform;
-    public Transform pushUpRbLeftTransform;
+    // public Rigidbody2D pushUpRbRight;
+    // public Rigidbody2D pushUpRbLeft;
+    // public Transform pushUpRbRightTransform;
+    // public Transform pushUpRbLeftTransform;
     public detect_wheel_ground_contact wheelGroundContact;
+    public float maxAngularVelocity = 40f;
+    public float rotationStrength = 200000f;
 
     private void Awake()
     {
@@ -21,15 +23,15 @@ public class motorbike_movement : MonoBehaviour
         if (gameState == GameManager.GameState.Pause)
         {
             rb.Sleep();
-            pushUpRbRight.Sleep();
-            pushUpRbLeft.Sleep();
+            // pushUpRbRight.Sleep();
+            // pushUpRbLeft.Sleep();
             enabled = false;
         }
         else
         {
             rb.WakeUp();
-            pushUpRbRight.WakeUp();
-            pushUpRbLeft.WakeUp();
+            // pushUpRbRight.WakeUp();
+            // pushUpRbLeft.WakeUp();
             enabled = true;
         }
     }
@@ -39,29 +41,39 @@ public class motorbike_movement : MonoBehaviour
     {
         //Movement to the right
         if(Input.GetKey("right") || Input.GetKey("d")) {
-            rb.AddForce(new Vector3(5000f*Time.deltaTime,0f,0f));
+            rb.AddForce(new Vector3(50000f*Time.deltaTime,0f,0f));
             
         }
         
         //Movement to the left
         if(Input.GetKey("left") || Input.GetKey("a")) {
-            rb.AddForce(new Vector3(-5000f*Time.deltaTime,0f,0f));
+            rb.AddForce(new Vector3(-50000f*Time.deltaTime,0f,0f));
         }
 
         // Rotate to the right
-        if(Input.GetKey("down") || Input.GetKey("s")) {
-            var impulse = (-17 * Mathf.Deg2Rad) * 7000f*Time.deltaTime;
+        if(Input.GetKey("q")) {//Input.GetKey("down") || Input.GetKey("s")) {
+            var impulse = (-24 * Mathf.Deg2Rad) * rotationStrength*Time.deltaTime;
             rb.AddTorque(impulse);
+            // rb.rotation -= rb.rotation*rotSlowDownFactor*Time.deltaTime + (addRotFactor+Time.deltaTime);
         }else{
         }
 
         //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
-        if((Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
-            var impulse = (24 * Mathf.Deg2Rad) * 7000f*Time.deltaTime;
+        if(Input.GetKey("e")) {//(Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
+            var impulse = (24 * Mathf.Deg2Rad) * rotationStrength*Time.deltaTime;
             rb.AddTorque(impulse);//7000f*Time.deltaTime);
+            // rb.rotation += rb.rotation*rotSlowDownFactor*Time.deltaTime + (addRotFactor+Time.deltaTime);
             
         }else{
 
+        }
+
+        if(rb.angularVelocity > maxAngularVelocity ) {
+            rb.angularVelocity = maxAngularVelocity;
+        }
+
+        if(rb.angularVelocity < maxAngularVelocity *-1) {
+            rb.angularVelocity = maxAngularVelocity*-1;
         }
 
         if(Input.GetKeyDown("space") && wheelGroundContact.isWheelGrounded) {
@@ -71,18 +83,18 @@ public class motorbike_movement : MonoBehaviour
 
         // this next part clamps the rotation and movement velocity to their respective max value
 
-        if((pushUpRbLeft.velocity.y + pushUpRbLeft.velocity.x) > 2f) {
-            pushUpRbLeft.velocity = new Vector2(pushUpRbRightTransform.up.x,pushUpRbRightTransform.up.y) * 2f;//new Vector2(0f,3f);
-        }
+        // if((pushUpRbLeft.velocity.y + pushUpRbLeft.velocity.x) > 2f) {
+        //     pushUpRbLeft.velocity = new Vector2(pushUpRbRightTransform.up.x,pushUpRbRightTransform.up.y) * 2f;//new Vector2(0f,3f);
+        // }
 
-        if((pushUpRbRight.velocity.y + pushUpRbRight.velocity.x) > 2f) {
-            pushUpRbRight.velocity = new Vector2(pushUpRbRightTransform.up.x,pushUpRbRightTransform.up.y) * 2f;//new Vector2(0f,3f);
-        }
+        // if((pushUpRbRight.velocity.y + pushUpRbRight.velocity.x) > 2f) {
+        //     pushUpRbRight.velocity = new Vector2(pushUpRbRightTransform.up.x,pushUpRbRightTransform.up.y) * 2f;//new Vector2(0f,3f);
+        // }
 
         if(rb.velocity.x < -5f) {
-            rb.velocity = new Vector2(-5f,0f);
+            rb.velocity = new Vector2(-5f,rb.velocity.y);
         }else if(rb.velocity.x > 5f) {
-            rb.velocity = new Vector2(5f,0f);
+            rb.velocity = new Vector2(5f,rb.velocity.y);
         }
         
     }
