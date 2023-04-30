@@ -16,6 +16,9 @@ public class motorbike_movement : MonoBehaviour
     public bool tech = false;
     public WheelJoint2D joint;
 
+    public float Speed = 1000;
+    public float torque = 40;
+
     private void Awake()
     {
         GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
@@ -125,13 +128,13 @@ public class motorbike_movement : MonoBehaviour
             motor.motorSpeed = 0;
             if (Input.GetKey("right") || Input.GetKey("d"))
             {
-                motor.motorSpeed = -700;
+                motor.motorSpeed = -Speed;
             }
             if (Input.GetKey("left") || Input.GetKey("a"))
             {
-                motor.motorSpeed = 700;
+                motor.motorSpeed = Speed;
             }
-            motor.maxMotorTorque = 25;
+            motor.maxMotorTorque = torque;
             joint.motor = motor;
 
             // Rotate to the right
