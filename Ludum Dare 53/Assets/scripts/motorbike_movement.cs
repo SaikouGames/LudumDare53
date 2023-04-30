@@ -12,6 +12,8 @@ public class motorbike_movement : MonoBehaviour
     public detect_wheel_ground_contact wheelGroundContact;
     public float maxAngularVelocity = 40f;
     public float rotationStrength = 200000f;
+    public Transform wheel1Transform;
+    public Transform wheel2Transform;
 
     private void Awake()
     {
@@ -23,15 +25,11 @@ public class motorbike_movement : MonoBehaviour
         if (gameState == GameManager.GameState.Pause)
         {
             rb.Sleep();
-            // pushUpRbRight.Sleep();
-            // pushUpRbLeft.Sleep();
             enabled = false;
         }
         else
         {
             rb.WakeUp();
-            // pushUpRbRight.WakeUp();
-            // pushUpRbLeft.WakeUp();
             enabled = true;
         }
     }
@@ -42,27 +40,29 @@ public class motorbike_movement : MonoBehaviour
         //Movement to the right
         if(Input.GetKey("right") || Input.GetKey("d")) {
             rb.AddForce(new Vector3(50000f*Time.deltaTime,0f,0f));
+            wheel1Transform.Rotate(new Vector3(0,0,-500*Time.deltaTime));
+            wheel2Transform.Rotate(new Vector3(0,0,-500*Time.deltaTime));
             
         }
         
         //Movement to the left
         if(Input.GetKey("left") || Input.GetKey("a")) {
             rb.AddForce(new Vector3(-50000f*Time.deltaTime,0f,0f));
+            wheel1Transform.Rotate(new Vector3(0,0,500*Time.deltaTime));
+            wheel2Transform.Rotate(new Vector3(0,0,500*Time.deltaTime));
         }
 
         // Rotate to the right
-        if(Input.GetKey("q")) {//Input.GetKey("down") || Input.GetKey("s")) {
+        if(Input.GetKey("q")) {
             var impulse = (-24 * Mathf.Deg2Rad) * rotationStrength*Time.deltaTime;
             rb.AddTorque(impulse);
-            // rb.rotation -= rb.rotation*rotSlowDownFactor*Time.deltaTime + (addRotFactor+Time.deltaTime);
         }else{
         }
 
         //Rotate to the left, but only when we are not rotating to the right, because else the character will start to fly
-        if(Input.GetKey("e")) {//(Input.GetKey("up") || Input.GetKey("w")) && !(Input.GetKey("down") || Input.GetKey("s"))) {
+        if(Input.GetKey("e")) {
             var impulse = (24 * Mathf.Deg2Rad) * rotationStrength*Time.deltaTime;
-            rb.AddTorque(impulse);//7000f*Time.deltaTime);
-            // rb.rotation += rb.rotation*rotSlowDownFactor*Time.deltaTime + (addRotFactor+Time.deltaTime);
+            rb.AddTorque(impulse);
             
         }else{
 
