@@ -11,6 +11,12 @@ public class Box : MonoBehaviour
         GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
     }
 
+    private void Start()
+    {
+        transform.localScale = new Vector3(Random.Range(0.03f,0.04f), Random.Range(0.05f, 0.4f),0.4f);
+        transform.Rotate(new Vector3(0f,0f,Random.Range(0,360)));
+    }
+
     private void OnDestroy()
     {
         // To avoid memory leaks in case the object is destroyed

@@ -15,6 +15,7 @@ public class motorbike_movement : MonoBehaviour
 
     public bool tech = false;
     public WheelJoint2D joint;
+    public WheelJoint2D joint2;
 
     public float Speed = 1000;
     public float torque = 40;
@@ -136,6 +137,7 @@ public class motorbike_movement : MonoBehaviour
             }
             motor.maxMotorTorque = torque;
             joint.motor = motor;
+            joint2.motor = motor;
 
             // Rotate to the right
             if (Input.GetKey("l"))
