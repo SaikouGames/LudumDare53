@@ -23,7 +23,7 @@ public class parallaxe : MonoBehaviour
         float temp = (cam.transform.position.x * (1 - layer));
         float dist = (cam.transform.position.x * layer);
 
-        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
+        transform.position = new Vector3(startpos + dist, cam.transform.position.y, cam.transform.position.z - 5);
 
         if(Mathf.Abs(cam.transform.position.x - transform.position.x) > 15 && cam.transform.position.x > transform.position.x)
         {
