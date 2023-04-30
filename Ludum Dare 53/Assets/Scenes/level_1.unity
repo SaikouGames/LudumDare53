@@ -848,6 +848,7 @@ GameObject:
   - component: {fileID: 323142890}
   - component: {fileID: 323142889}
   - component: {fileID: 323142892}
+  - component: {fileID: 323142893}
   m_Layer: 6
   m_Name: motorcycle-main-body-frame-3
   m_TagString: Untagged
@@ -2030,6 +2031,32 @@ MonoBehaviour:
   rotationStrength: 10000
   tech: 0
   joint: {fileID: 323142889}
+--- !u!61 &323142893
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323142885}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -21.117147, y: 6.610199}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 46.993816, y: 26.87}
+    newSize: {x: 46.993816, y: 26.87}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 21.795208, y: 3.357212}
+  m_EdgeRadius: 0
 --- !u!1001 &343359827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2540,7 +2567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
@@ -2697,7 +2724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
@@ -3068,7 +3095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
@@ -5680,7 +5707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
@@ -5757,7 +5784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
@@ -6155,7 +6182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 2179652578594679111, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
       propertyPath: m_Material
