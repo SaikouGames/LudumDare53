@@ -16,6 +16,6 @@ public class follow_charachter : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(playerTransform.position.x,playerTransform.position.y,-10f), lerpSpeed);   
+        transform.position = Vector3.Lerp(transform.position, new Vector3(playerTransform.position.x,playerTransform.position.y + 4,-10f), lerpSpeed);   
     }
 }
