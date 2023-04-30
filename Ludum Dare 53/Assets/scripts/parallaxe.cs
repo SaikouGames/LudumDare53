@@ -23,15 +23,15 @@ public class parallaxe : MonoBehaviour
         float temp = (cam.transform.position.x * (1 - layer));
         float dist = (cam.transform.position.x * layer);
 
-        transform.position = new Vector3(startpos + dist, cam.transform.position.y + 5, transform.position.z);
+        transform.position = new Vector3(startpos + dist, transform.position.y , transform.position.z);
 
-        if(Mathf.Abs(cam.transform.position.x - transform.position.x) > 15 && cam.transform.position.x > transform.position.x)
+        if(Mathf.Abs(cam.transform.position.x - transform.position.x) > 25 && cam.transform.position.x > transform.position.x)
         {
-            transform.position = new Vector3(transform.position.x + 30, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 50, transform.position.y, transform.position.z);
         }
-        else if (Mathf.Abs(cam.transform.position.x - transform.position.x) > 15 && cam.transform.position.x < transform.position.x)
+        else if (Mathf.Abs(cam.transform.position.x - transform.position.x) > 25 && cam.transform.position.x < transform.position.x)
         {
-            transform.position = new Vector3(transform.position.x - 30, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - 50, transform.position.y, transform.position.z);
         }
     }
 }
