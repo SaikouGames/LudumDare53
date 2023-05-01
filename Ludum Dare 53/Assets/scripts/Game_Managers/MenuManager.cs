@@ -20,6 +20,8 @@ public class MenuManager : MonoBehaviour
     {
         _isPausing = true;
 
+        Time.timeScale = 0;
+
         GameManager.Instance.UpdateGameState(GameManager.GameState.Pause);
 
         _pauseMenu.SetActive(true);
@@ -28,6 +30,8 @@ public class MenuManager : MonoBehaviour
     public void Resume()
     {
         _isPausing = false;
+
+        Time.timeScale = 1;
 
         GameManager.Instance.UpdateGameState(GameManager.GameState.Playing);
 

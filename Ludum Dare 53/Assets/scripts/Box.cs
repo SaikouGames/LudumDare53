@@ -8,7 +8,7 @@ public class Box : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
 
-        GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
+        //GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
     }
 
     private void Start()
@@ -17,7 +17,7 @@ public class Box : MonoBehaviour
         transform.Rotate(new Vector3(0f,0f,Random.Range(0,360)));
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         // To avoid memory leaks in case the object is destroyed
         GameManager.OnGameStateChanged -= GameManager_OnGameStateChanged;
@@ -35,5 +35,5 @@ public class Box : MonoBehaviour
             _rb.WakeUp();
             enabled = true;
         }
-    }
+    }*/
 }

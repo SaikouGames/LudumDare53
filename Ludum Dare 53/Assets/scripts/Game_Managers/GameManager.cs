@@ -85,6 +85,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(levelId);
     }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     private void HandlePlaying()
     {
 
