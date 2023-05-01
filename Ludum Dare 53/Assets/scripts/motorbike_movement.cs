@@ -25,7 +25,7 @@ public class motorbike_movement : MonoBehaviour
     public GameObject cloud;
     public Transform aus;
 
-    private void Awake()
+    /*private void Awake()
     {
         GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
     }
@@ -45,7 +45,7 @@ public class motorbike_movement : MonoBehaviour
 
         //joint = GetComponent<WheelJoint2D>();
         //rb = GetComponent<Rigidbody2D>();
-    }
+    }*/
 
     // Update is called once per frame
     void Update()

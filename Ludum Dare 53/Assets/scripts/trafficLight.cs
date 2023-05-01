@@ -26,6 +26,7 @@ public class trafficLight : MonoBehaviour
             game.UpdateGameState(GameManager.GameState.Defeat);
         }
     }
+
     IEnumerator time()
     {
         while (true)

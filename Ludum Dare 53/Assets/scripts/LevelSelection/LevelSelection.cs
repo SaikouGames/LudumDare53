@@ -29,7 +29,7 @@ public class LevelSelection : MonoBehaviour
 
     public void LoadLevel(int level)
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(level+1);
     }
 
     public void ReturnToMainMenu()
