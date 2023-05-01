@@ -5,16 +5,15 @@ using UnityEngine.UI;
 public class LevelSelection : MonoBehaviour
 {
     [SerializeField] private Button[] lvlButtons;
-    [SerializeField] private Text _starNumberText;
 
     private void Start()
     {
-        int levelAt = PlayerPrefs.GetInt("levelAt", 2);
+        int levelAt = SaveScript.Instance.GetGameData().maxLevel;
 
         for (int i = 0; i < lvlButtons.Length; i++)
         {
             // a level's build index is its id + 2 (because there's the main menu scene and the level selection scene)
-            if (i + 2 > levelAt)
+            if (i > levelAt)
             {
                 lvlButtons[i].interactable = false;
             }
