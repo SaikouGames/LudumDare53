@@ -42,10 +42,7 @@ public class SaveScript: MonoBehaviour
             gameData.maxLevel = levelId_;
         }
 
-        if (gameData.levelsStars[levelId_] > starsNumber_)
-        {
-            gameData.levelsStars[levelId_] = starsNumber_;
-        }
+        gameData.levelsStars[levelId_] = starsNumber_;
 
         SaveToJson();
     }
@@ -58,6 +55,7 @@ public class SaveScript: MonoBehaviour
             gameData.levelsStars.Add(0);
         }
     }
+    
 
     private void SaveToJson()
     {
@@ -67,7 +65,6 @@ public class SaveScript: MonoBehaviour
 
         //Debug.Log("*** Game saved ***");
     }
-
     private void LoadFromJson()
     {
         string data = System.IO.File.ReadAllText(filePath);
