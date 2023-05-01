@@ -7,6 +7,7 @@ public class parallaxe : MonoBehaviour
     private float length, startpos;
     GameObject cam;
     public float layer;
+    float zusatz = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +24,15 @@ public class parallaxe : MonoBehaviour
         float temp = (cam.transform.position.x * (1 - layer));
         float dist = (cam.transform.position.x * layer);
 
-        transform.position = new Vector3(startpos + dist, transform.position.y , transform.position.z);
+        transform.position = new Vector3(startpos + dist + zusatz, transform.position.y , transform.position.z);
 
         if(Mathf.Abs(cam.transform.position.x - transform.position.x) > 25 && cam.transform.position.x > transform.position.x)
         {
-            transform.position = new Vector3(transform.position.x + 50, transform.position.y, transform.position.z);
+            zusatz += 50;
         }
         else if (Mathf.Abs(cam.transform.position.x - transform.position.x) > 25 && cam.transform.position.x < transform.position.x)
         {
-            transform.position = new Vector3(transform.position.x - 50, transform.position.y, transform.position.z);
+            zusatz -= 50;
         }
     }
 }
