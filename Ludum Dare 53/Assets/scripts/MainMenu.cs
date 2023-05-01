@@ -5,6 +5,8 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
+        AudioManager.Instance.Play("Click");
+
         SceneManager.LoadScene("LevelSelection");
     }
 

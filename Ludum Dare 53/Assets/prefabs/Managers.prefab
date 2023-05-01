@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788f110add42d3c4f8495ab46ad74b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Click
+    clip: {fileID: 8300000, guid: baf47368349041242b6d24ff8da3253c, type: 3}
+    volume: 0.228
+    source: {fileID: 0}
 --- !u!1 &4918057804236772520
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,6 @@ public class MenuManager : MonoBehaviour
     }
     public void Pause()
     {
-        AudioManager.Instance.Play("Click");
 
         _isPausing = true;
 

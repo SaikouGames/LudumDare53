@@ -13,16 +13,18 @@ public class SaveScript: MonoBehaviour
     {
         Instance = this;
         filePath = Application.persistentDataPath + "/GameData.json";
-    }
-
-    private void Start()
-    {
         // If the save file doesn't exist, we create it
         if (!System.IO.File.Exists(filePath))
         {
             ResetSave();
             SaveToJson();
         }
+
+    }
+
+    private void Start()
+    {
+        
     }
 
     public Data GetGameData()
@@ -42,7 +44,7 @@ public class SaveScript: MonoBehaviour
             gameData.maxLevel = levelId_;
         }
 
-        if (gameData.levelsStars[levelId_] > starsNumber_)
+        if (starsNumber_ > gameData.levelsStars[levelId_])
         {
             gameData.levelsStars[levelId_] = starsNumber_;
         }
