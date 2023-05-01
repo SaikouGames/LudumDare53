@@ -12,7 +12,6 @@ public class LevelSelection : MonoBehaviour
 
         for (int i = 0; i < lvlButtons.Length; i++)
         {
-            // a level's build index is its id + 2 (because there's the main menu scene and the level selection scene)
             if (i > levelAt)
             {
                 lvlButtons[i].interactable = false;
@@ -22,6 +21,7 @@ public class LevelSelection : MonoBehaviour
 
     public void LoadLevel(int level)
     {
+        // a level's build index is its id + 2 (because there's the main menu scene and the level selection scene)
         SceneManager.LoadScene(level + 2);
     }
 
