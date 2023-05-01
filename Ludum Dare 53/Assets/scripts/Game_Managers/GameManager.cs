@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
 
     private BoxesManager boxesManager;
+    private int levelId;
 
     public enum GameState
     {
@@ -17,6 +18,16 @@ public class GameManager : MonoBehaviour
         Pause,
         Victory,
         Defeat
+    }
+
+    public int GetLevelId()
+    {
+        return levelId;
+    }
+
+    public int GetStarsNumber()
+    {
+        return CalculateStarsNumber();
     }
 
     private void Awake()
@@ -28,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        levelId = SceneManager.GetActiveScene().buildIndex;
         UpdateGameState(GameState.Playing);
     }
 
@@ -68,6 +80,16 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    public void Restartlevel()
+    {
+        SceneManager.LoadScene(levelId);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     private void HandlePlaying()
     {
 
@@ -80,8 +102,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleVictory()
     {
-        int levelId = SceneManager.GetActiveScene().buildIndex;
-        int numberOfStars = GetNumberOfStars();
+        int numberOfStars = CalculateStarsNumber();
 
         SaveScript.Instance.Save(levelId, numberOfStars);
 
@@ -93,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private int GetNumberOfStars()
+    private int CalculateStarsNumber()
     {
         int totalNumberOfBoxes = boxesManager.GetDefaultNumberOfBoxes();
         int numberOfBoxesDelivered = boxesManager.GetCurrentNumberOfBoxes();

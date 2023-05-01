@@ -6,38 +6,42 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _victoryMenu;
     [SerializeField] private GameObject _defeatMenu;
+    [SerializeField] private GameObject _starsObtained;
+    private LevelButton _starsObtainedScript;
 
     private bool _isPausing;
 
     private void Awake()
     {
         Instance = this;
+        _starsObtainedScript = _starsObtained.GetComponent<LevelButton>();
     }
     public void Pause()
     {
         _isPausing = true;
 
+        Time.timeScale = 0;
+
         GameManager.Instance.UpdateGameState(GameManager.GameState.Pause);
 
         _pauseMenu.SetActive(true);
-
-        print("Game paused");
     }
 
     public void Resume()
     {
         _isPausing = false;
 
+        Time.timeScale = 1;
+
         GameManager.Instance.UpdateGameState(GameManager.GameState.Playing);
 
         _pauseMenu.SetActive(false);
-
-        print("Game resumed");
     }
 
     public void ToggleVictoryMenu()
     {
         _victoryMenu.SetActive(!_victoryMenu.activeSelf);
+        _starsObtainedScript.DisplayStars(GameManager.Instance.GetStarsNumber());
     }
 
     public void ToggleDefeatMenu()
