@@ -4,6 +4,7 @@ using UnityEngine;
 public class SaveScript: MonoBehaviour
 {
     public static SaveScript Instance;
+
     public Data gameData = new Data();
 
     private string filePath;
@@ -26,6 +27,8 @@ public class SaveScript: MonoBehaviour
 
     public Data GetGameData()
     {
+        LoadFromJson();
+
         return gameData;
     }
 
@@ -39,7 +42,7 @@ public class SaveScript: MonoBehaviour
             gameData.maxLevel = levelId_;
         }
 
-        gameData.levelsData[levelId_].stars = starsNumber_;
+        gameData.levelsStars[levelId_] = starsNumber_;
 
         SaveToJson();
     }
@@ -47,10 +50,9 @@ public class SaveScript: MonoBehaviour
     public void ResetSave()
     {
         gameData.maxLevel = 0;
-        for (int i = 0; i < gameData.levelsData.Count; i++)
+        for (int i = 0; i < 3; i++)
         {
-            gameData.levelsData[i].levelId = i;
-            gameData.levelsData[i].stars = 0;
+            gameData.levelsStars.Add(0);
         }
     }
     
@@ -77,12 +79,5 @@ public class Data
 {
     // The highest level's id reached by the player
     public int maxLevel;
-    public List<LevelData> levelsData = new List<LevelData>();
-}
-
-public class LevelData
-{
-    // should be private setter
-    public int levelId;
-    public int stars;
+    public List<int> levelsStars = new List<int>();
 }
