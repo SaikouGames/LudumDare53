@@ -2871,11 +2871,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &183857277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6258278049477634895, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
-  m_PrefabInstance: {fileID: 6258278049369316146}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &190056697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3199,6 +3194,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &211486318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7592250667948522196, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
+  m_PrefabInstance: {fileID: 6258278049369316146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &226442399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,11 +3978,6 @@ MonoBehaviour:
   - {x: 0.7241598, y: -0.98418695, z: 0}
   - {x: 0.7420912, y: 1.4414747, z: 0}
   - {x: -0.7510613, y: 1.4325082, z: 0}
---- !u!1 &245335429 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6258278049412275895, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
-  m_PrefabInstance: {fileID: 6258278049369316146}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &275078476
 GameObject:
   m_ObjectHideFlags: 0
@@ -19988,11 +19983,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1265041453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6258278048411376415, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
-  m_PrefabInstance: {fileID: 6258278049369316146}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1271633080
 GameObject:
   m_ObjectHideFlags: 0
@@ -20175,6 +20165,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1292625213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8379246280679766228, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
+  m_PrefabInstance: {fileID: 6258278049369316146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1292783679
 GameObject:
   m_ObjectHideFlags: 0
@@ -22182,6 +22177,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1439352063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2229656956574159727, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
+  m_PrefabInstance: {fileID: 6258278049369316146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1445766535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30061,6 +30061,11 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: a0028073bfb20d64aa83e330df569812, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d74375cfe564c9987468f91dbdf75, type: 3}
+--- !u!1 &1893416340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7673677148625880517, guid: 1d9cce80f8210eaf3b23051bc12526fa, type: 3}
+  m_PrefabInstance: {fileID: 6258278049369316146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1896972373
 GameObject:
   m_ObjectHideFlags: 0
@@ -33248,15 +33253,19 @@ PrefabInstance:
     - target: {fileID: 4918057804400308646, guid: a24fdb03265d2ab58bdf01591f636193, type: 3}
       propertyPath: _pauseMenu
       value: 
-      objectReference: {fileID: 183857277}
+      objectReference: {fileID: 1292625213}
     - target: {fileID: 4918057804400308646, guid: a24fdb03265d2ab58bdf01591f636193, type: 3}
       propertyPath: _defeatMenu
       value: 
-      objectReference: {fileID: 1265041453}
+      objectReference: {fileID: 1893416340}
     - target: {fileID: 4918057804400308646, guid: a24fdb03265d2ab58bdf01591f636193, type: 3}
       propertyPath: _victoryMenu
       value: 
-      objectReference: {fileID: 245335429}
+      objectReference: {fileID: 211486318}
+    - target: {fileID: 4918057804400308646, guid: a24fdb03265d2ab58bdf01591f636193, type: 3}
+      propertyPath: _starsObtained
+      value: 
+      objectReference: {fileID: 1439352063}
     - target: {fileID: 4918057805819949844, guid: a24fdb03265d2ab58bdf01591f636193, type: 3}
       propertyPath: m_Name
       value: Managers
