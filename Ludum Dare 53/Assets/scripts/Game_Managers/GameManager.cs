@@ -79,14 +79,25 @@ public class GameManager : MonoBehaviour
 
         OnGameStateChanged?.Invoke(newState);
     }
+    public void Nextlevel()
+    {
+        AudioManager.Instance.Play("Click");
+
+        SceneManager.LoadScene(levelId+1);
+    }
+
 
     public void Restartlevel()
     {
+        AudioManager.Instance.Play("Click");
+
         SceneManager.LoadScene(levelId);
     }
 
     public void ReturnToMainMenu()
     {
+        AudioManager.Instance.Play("Click");
+
         SceneManager.LoadScene("MainMenu");
     }
 

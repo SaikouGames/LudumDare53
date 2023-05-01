@@ -29,11 +29,15 @@ public class LevelSelection : MonoBehaviour
 
     public void LoadLevel(int level)
     {
-        SceneManager.LoadScene(level+1);
+        AudioManager.Instance.Play("Click");
+
+        SceneManager.LoadScene(level+2);
     }
 
     public void ReturnToMainMenu()
     {
+        AudioManager.Instance.Play("Click");
+
         SceneManager.LoadScene("MainMenu");
     }
 }

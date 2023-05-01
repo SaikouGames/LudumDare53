@@ -53,7 +53,7 @@ public class SaveScript: MonoBehaviour
     public void ResetSave()
     {
         gameData.maxLevel = 0;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             gameData.levelsStars.Add(0);
         }

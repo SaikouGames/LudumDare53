@@ -18,6 +18,8 @@ public class MenuManager : MonoBehaviour
     }
     public void Pause()
     {
+        AudioManager.Instance.Play("Click");
+
         _isPausing = true;
 
         Time.timeScale = 0;
@@ -29,6 +31,8 @@ public class MenuManager : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.Instance.Play("Click");
+
         _isPausing = false;
 
         Time.timeScale = 1;
