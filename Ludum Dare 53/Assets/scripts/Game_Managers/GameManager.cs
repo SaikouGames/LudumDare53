@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleVictory()
     {
-        int levelId = SceneManager.GetActiveScene().buildIndex;
+        int levelId = SceneManager.GetActiveScene().buildIndex - 2;
         int numberOfStars = GetNumberOfStars();
 
         SaveScript.Instance.Save(levelId, numberOfStars);
