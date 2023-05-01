@@ -22,6 +22,9 @@ public class motorbike_movement : MonoBehaviour
     public float Speed = 1000;
     public float torque = 40;
 
+    public GameObject cloud;
+    public Transform aus;
+
     private void Awake()
     {
         GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
@@ -47,6 +50,7 @@ public class motorbike_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Instantiate(cloud, aus);
         if (tech)
         {
             //Movement to the right
