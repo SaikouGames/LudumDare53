@@ -5471,8 +5471,8 @@ MonoBehaviour:
   wheelGroundContact: {fileID: 0}
   maxAngularVelocity: 40
   rotationStrength: 10000
-  wheel1Transform: {fileID: 0}
-  wheel2Transform: {fileID: 0}
+  wheel1Transform: {fileID: 125279702}
+  wheel2Transform: {fileID: 428363931}
   tech: 0
   joint: {fileID: 323142889}
   joint2: {fileID: 323142890}
@@ -6921,7 +6921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487497030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.45, y: 6.55, z: 0}
+  m_LocalPosition: {x: -17.45, y: 11.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6965,7 +6965,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13, y: 20}
+  m_Size: {x: 13, y: 30}
   m_EdgeRadius: 0
 --- !u!1 &495921617
 GameObject:
