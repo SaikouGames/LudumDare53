@@ -17,13 +17,13 @@ public class detect_wheel_ground_contact : MonoBehaviour
         
     }
     
-    void OnCollisionExit2D(Collider2D other) {
+    void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.tag == "Ground") {
             isWheelGrounded = false;
         }
     }
 
-    void OnCollisionEnter2D(Collider2D other) {
+    void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Ground") {
             isWheelGrounded = true;
         }
