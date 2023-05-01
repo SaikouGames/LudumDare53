@@ -31,19 +31,6 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.Playing);
     }
 
-    private void Update()
-    {
-        // *** For testing purposes ***
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            int level = SaveScript.Instance.GetGameData().level;
-            int stars = SaveScript.Instance.GetGameData().stars;
-
-            Debug.Log($"Level {level} completed with {stars} stars.");
-        }
-        // *** ***
-    }
-
     public void UpdateGameState(GameState newState)
     {
         /* 
@@ -93,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleVictory()
     {
-        int levelId = SceneManager.GetActiveScene().buildIndex;
+        int levelId = SceneManager.GetActiveScene().buildIndex - 2;
         int numberOfStars = GetNumberOfStars();
 
         SaveScript.Instance.Save(levelId, numberOfStars);
