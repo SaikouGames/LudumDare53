@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72530924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.97, y: -2.25, z: 0.5661585}
+  m_LocalPosition: {x: -0.97, y: -3.36, z: 0.5661585}
   m_LocalScale: {x: 0.56326497, y: 0.56326497, z: 0.56326497}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2029,6 +2029,8 @@ MonoBehaviour:
   wheelGroundContact: {fileID: 0}
   maxAngularVelocity: 40
   rotationStrength: 10000
+  wheel1Transform: {fileID: 0}
+  wheel2Transform: {fileID: 0}
   tech: 0
   joint: {fileID: 323142889}
   Speed: 1000

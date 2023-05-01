@@ -52,8 +52,6 @@ public class motorbike_movement : MonoBehaviour
             if (Input.GetKey("right") || Input.GetKey("d"))
             {
                 rb.AddForce(new Vector3(50000f * Time.deltaTime, 0f, 0f));
-                wheel1Transform.Rotate(new Vector3(0,0,-500*Time.deltaTime));
-                wheel2Transform.Rotate(new Vector3(0,0,-500*Time.deltaTime));
 
             }
 
@@ -61,8 +59,6 @@ public class motorbike_movement : MonoBehaviour
             if (Input.GetKey("left") || Input.GetKey("a"))
             {
                 rb.AddForce(new Vector3(-50000f * Time.deltaTime, 0f, 0f));
-                wheel1Transform.Rotate(new Vector3(0,0,500*Time.deltaTime));
-                wheel2Transform.Rotate(new Vector3(0,0,500*Time.deltaTime));
             }
 
             // Rotate to the right
