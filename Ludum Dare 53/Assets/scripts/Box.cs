@@ -13,7 +13,7 @@ public class Box : MonoBehaviour
 
     private void Start()
     {
-        transform.localScale = new Vector3(Random.Range(0.03f,0.04f), Random.Range(0.05f, 0.4f),0.4f);
+        transform.localScale = new Vector3(Random.Range(0.03f,0.09f), 0.05f,0.4f);
         transform.Rotate(new Vector3(0f,0f,Random.Range(0,360)));
     }
 
