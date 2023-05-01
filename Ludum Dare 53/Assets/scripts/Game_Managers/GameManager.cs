@@ -36,10 +36,10 @@ public class GameManager : MonoBehaviour
         // *** For testing purposes ***
         if(Input.GetKeyDown(KeyCode.L))
         {
-            int level = SaveScript.Instance.GetGameData().level;
-            int stars = SaveScript.Instance.GetGameData().stars;
+            //int level = SaveScript.Instance.GetGameData().levelId;
+            //int stars = SaveScript.Instance.GetGameData().stars;
 
-            Debug.Log($"Level {level} completed with {stars} stars.");
+            //Debug.Log($"Level {level} completed with {stars} stars.");
         }
         // *** ***
     }
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleVictory()
     {
-        int levelId = SceneManager.GetActiveScene().buildIndex;
+        int levelId = SceneManager.GetActiveScene().buildIndex - 2;
         int numberOfStars = GetNumberOfStars();
 
         SaveScript.Instance.Save(levelId, numberOfStars);
